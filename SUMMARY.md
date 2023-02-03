@@ -12,7 +12,7 @@
 
 ## LSM Family
 
-* [什么是 LSM ](lsm-family/shi-mo-shi-lsm.md)
+* [什么是 LSM](lsm-family/shi-mo-shi-lsm.md)
 * [🪨 RocksDB 介绍](lsm-family/rocksdb-jie-shao.md)
 * [🌴 LevelDB 介绍](lsm-family/leveldb-jie-shao.md)
 
@@ -35,3 +35,7 @@
 
 * [纠删码](qi-ta-cun-chu/jiu-shan-ma.md)
 * [对象存储，块存储，文件存储](qi-ta-cun-chu/dui-xiang-cun-chu-kuai-cun-chu-wen-jian-cun-chu.md)
+
+***
+
+* [🧐 FAQ](faq.md)
