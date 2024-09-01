@@ -1,2 +1,0 @@
-# Doris, SelectDB
-

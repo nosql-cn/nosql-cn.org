@@ -1,0 +1,20 @@
+<rss version="2.0">
+    <channel>
+        <title>Posts on NoSQL 中文社区</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>Recent content in NoSQL 中文社区</description>
+
+         
+            
+                 
+                <item>
+                    <title>你好世界</title>
+                    <link>http://localhost:1313/posts/%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</link>
+                    <pubDate>Sun, 01 Sep 2024 14:22:20 +0800</pubDate>
+                    <description>Hello World!</description>
+                </item>
+                
+            
+        
+    </channel>
+</rss>
