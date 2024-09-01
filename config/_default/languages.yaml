@@ -1,0 +1,80 @@
+zh:
+  languageName: 中文
+  weight: 1
+  ### 版权声明 (可以使用 Markdown) ###
+  copyright: "版权所有 &copy; {{< current_year >}} 公司名称。保留所有权利。由 [CNCF](https://www.cncf.io) 提供的 Hugo [Dot Org 主题](https://github.com/cncf/dot-org-hugo-theme)。"
+  title: "NoSQL 中文社区"
+  params:
+    description: "一个讨论不仅仅局限于 SQL 的存储社区"
+    ### 无障碍访问 ###
+    accessibility:
+      skip_text: "跳到内容"
+      help_text: "无障碍声明"
+      help_url: "/example-page/"
+    ### 号召性用语 ###
+    main_cta:
+      text: "加入我们"
+      link: "/example-page/"
+    footer_cta:
+      text: "加入我们"
+      link: "/example-page/"
+    github_edit: "在 GitHub 上编辑此页面"
+  ## 示例菜单显示子页面 ###
+  menu:
+    main:
+    - identifier: "about"
+      name: "关于我们"
+      url: "/about/"
+      weight: 2
+    # - identifier: "child-1"
+    #   name: "示例子页面"
+    #   url: "/example-page/"
+    #   weight: 1
+    #   post: "这是一个示例描述文本。"
+    #   parent: "about"
+    # - identifier: "child-2"
+    #   name: "示例子页面"
+    #   url: "/example-page/"
+    #   weight: 2
+    #   post: "这是一个示例描述文本。"
+    #   parent: "about"
+    # - identifier: "child-3"
+    #   name: "示例子页面"
+    #   url: "/example-page/"
+    #   weight: 3
+    #   post: "这是一个示例描述文本。"
+    #   parent: "about"
+    # - identifier: "example"
+    #   name: "示例"
+    #   url: "/example-page/"
+    #   weight: 2
+    # - identifier: "example-1"
+    #   name: "示例子页面"
+    #   url: "/example-page/"
+    #   weight: 1
+    #   post: "这是一个示例描述文本。"
+    #   parent: "example"
+    # - identifier: "example-2"
+    #   name: "示例子页面"
+    #   url: "/example-page/"
+    #   weight: 2
+    #   post: "这是一个示例描述文本。"
+    #   parent: "example"
+    # - identifier: "example-3"
+    #   name: "示例子页面"
+    #   url: "/example-page/"
+    #   weight: 3
+    #   post: "这是一个示例描述文本。"
+    #   parent: "example"
+    # - identifier: "demo-page"
+    #   name: "演示页面"
+    #   url: "/demo-page/"
+    #   weight: 3
+    - identifier: "faq"
+      name: "常见问题"
+      url: "/faq/"
+      weight: 4
+    - identifier: "blog"
+      name: "博客"
+      url: "/posts/"
+      weight: 1

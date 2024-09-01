@@ -1,0 +1,25 @@
+baseURL = 'https://nosql-cn.org/'
+languageCode = 'zh-cn'
+title = 'NoSQL 中文社区 ——  讨论不仅限于 SQL 的存储'
+theme = "dot-org-hugo-theme"
+
+
+[params]
+  mainSections = ["post"]
+  dateFormat = "January 2, 2006"
+  # 其他你想要配置的主题相关参数
+
+
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
