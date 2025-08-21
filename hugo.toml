@@ -1,25 +1,33 @@
 baseURL = 'https://nosql-cn.org/'
 languageCode = 'zh-cn'
-title = 'NoSQL 中文社区 ——  讨论不仅限于 SQL 的存储'
+title = 'NoSQL 中文社区 —— Not Only SQL'
 theme = "dot-org-hugo-theme"
 
-
 [params]
-  mainSections = ["post"]
-  dateFormat = "January 2, 2006"
-  # 其他你想要配置的主题相关参数
+  mainSections = ["blog"]
+  dateFormat = "2006-01-02"
+  description = "存储领域的从业者和爱好者自发组织的民间技术交流社区"
+  github_repo = "https://github.com/nosql-cn/nosql-cn.org"
 
 
 
 [menu]
   [[menu.main]]
-    name = "Home"
+    name = "首页"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "About"
+    name = "关于社区"
     url = "/about/"
     weight = 2
+  [[menu.main]]
+    name = "投稿指南"
+    url = "/contribute/"
+    weight = 3
+  [[menu.main]]
+    name = "常见问题"
+    url = "/faq/"
+    weight = 4
 
 [markup]
   defaultMarkdownHandler = "goldmark"

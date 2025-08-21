@@ -1,8 +1,8 @@
 ######################## custom scripts & styles ####################
 
 # Add custom assets relative to /static or via https
-logo_on_white: "/img/logo-b.png"
-logo_on_black: "/img/logo-w.png"
+logo_on_white: "/img/logo.svg"
+logo_on_black: "/img/logo.svg"
 custom_js: []
 custom_css: []
 
@@ -38,3 +38,13 @@ social_links:
 sticky_header: true
 # Enable search in header UI
 show_search: true
+
+# Main call-to-action button
+main_cta:
+  text: "加入我们"
+  link: "https://github.com/nosql-cn"
+
+# Footer call-to-action button
+footer_cta:
+  text: "加入我们"
+  link: "https://github.com/nosql-cn"

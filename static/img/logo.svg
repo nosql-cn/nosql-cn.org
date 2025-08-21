@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 168 168">
+  <defs>
+    <style>
+      .mark-stroke { fill: none; stroke: currentColor; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+      .node { fill: currentColor; }
+    </style>
+  </defs>
+  <!-- outer rounded square -->
+  <rect x="0" y="0" width="168" height="168" rx="28" class="mark-stroke"/>
+  <!-- N path -->
+  <path d="M40 128 L40 40 L128 128 L128 40" class="mark-stroke"/>
+  <!-- nodes -->
+  <circle cx="40" cy="40" r="7" class="node"/>
+  <circle cx="40" cy="128" r="7" class="node"/>
+  <circle cx="128" cy="40" r="7" class="node"/>
+  <circle cx="128" cy="128" r="7" class="node"/>
+</svg>
