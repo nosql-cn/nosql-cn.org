@@ -1,11 +1,1 @@
-<rss version="2.0">
-    <channel>
-        <title>Tags on NoSQL 中文社区</title>
-        <link>https://nosql-cn.org/tags/</link>
-        <description>Recent content in NoSQL 中文社区</description>
-
-         
-            
-        
-    </channel>
-</rss>
+<rss version="2.0"><channel><title>Tags on NoSQL 中文社区</title><link>https://nosql-cn.org/tags/</link><description>Recent content in NoSQL 中文社区</description><item><title>社区</title><link>https://nosql-cn.org/tags/%E7%A4%BE%E5%8C%BA/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate><description/></item><item><title>投稿</title><link>https://nosql-cn.org/tags/%E6%8A%95%E7%A8%BF/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate><description/></item><item><title>指南</title><link>https://nosql-cn.org/tags/%E6%8C%87%E5%8D%97/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate><description/></item></channel></rss>
