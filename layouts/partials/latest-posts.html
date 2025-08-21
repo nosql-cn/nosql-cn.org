@@ -1,0 +1,10 @@
+{{- $blogPages := where .Site.RegularPages "Section" "blog" -}}
+{{- if $blogPages -}}
+  {{- range first 3 ($blogPages.ByDate.Reverse) -}}
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p><strong>作者：</strong> {{ .Params.author }} | <strong>发布时间：</strong> {{ .Date.Format "2006-01-02" }}</p>
+    <p>{{ .Summary | plainify | truncate 100 "..." }}</p>
+  {{- end -}}
+{{- else -}}
+  <p>暂无投稿文章，欢迎成为第一个投稿者！</p>
+{{- end -}}

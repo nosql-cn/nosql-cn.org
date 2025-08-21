@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="content">
+  <p><strong>存储领域的从业者和爱好者自发组织的民间技术交流社区</strong></p>
+  <p>我们的宗旨：<strong>无广告、零推广、不包装</strong>，专注于 Not Only SQL 相关技术交流。</p>
+  
+  <h2 id="关于我们">关于我们</h2>
+  <p>NOSQL 的意思是 <strong>Not Only SQL</strong>，我们讨论的话题不仅限于 SQL，而是涵盖整个存储领域。本社区由基础设施开发工程师自发组织，致力于打造一个纯粹的技术交流平台。</p>
+  
+  <h2 id="社区特色">社区特色</h2>
+  <ul>
+    <li>🔧 <strong>技术导向</strong>：纯技术交流，无商业广告</li>
+    <li>🤝 <strong>社区驱动</strong>：自发组织，无人专职运营</li>
+    <li>🌐 <strong>开放包容</strong>：欢迎所有存储技术爱好者</li>
+    <li>📚 <strong>知识共享</strong>：汇集各方技术资源</li>
+  </ul>
+  
+  <h2 id="最新投稿">最新投稿</h2>
+  {{- $blogPages := where .Site.RegularPages "Section" "blog" -}}
+  {{- if $blogPages -}}
+    {{- range first 3 ($blogPages.ByDate.Reverse) -}}
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p><strong>作者：</strong> {{ .Params.author }} | <strong>发布时间：</strong> {{ .Date.Format "2006-01-02" }}</p>
+      <p>{{ .Summary | plainify | truncate 100 "..." }}</p>
+    {{- end -}}
+  {{- else -}}
+    <p>暂无投稿文章，欢迎成为第一个投稿者！</p>
+  {{- end -}}
+  
+  <h2 id="快速导航">快速导航</h2>
+  <ul>
+    <li><a href="/about/">📋 关于社区</a> - 了解社区详情</li>
+    <li><a href="/contribute/">✍️ 投稿指南</a> - 如何参与投稿</li>
+    <li><a href="/faq/">❓ 常见问题</a> - 常见问题解答</li>
+    <li><a href="https://github.com/nosql-cn">💻 GitHub</a> - 参与开源贡献</li>
+  </ul>
+</div>
+
+{{- /* Display additional content sections */ -}}
+{{- .Content -}}
+{{ end }}
