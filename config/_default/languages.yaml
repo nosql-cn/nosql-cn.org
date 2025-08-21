@@ -74,7 +74,4 @@ zh:
       name: "常见问题"
       url: "/faq/"
       weight: 4
-    - identifier: "blog"
-      name: "博客"
-      url: "/posts/"
-      weight: 1
+    

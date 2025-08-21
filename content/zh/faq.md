@@ -4,8 +4,6 @@ description: "NoSQL-CN 社区常见问题解答"
 ---
 
 {{< intro >}}
-# 常见问题
-
 ## 关于社区
 
 ### Q: 什么是 NoSQL-CN 社区？
