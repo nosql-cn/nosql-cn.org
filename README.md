@@ -2,6 +2,9 @@
 
 > 存储领域的从业者和爱好者自发组织的民间技术交流社区 - **无广告、零推广、不包装**
 
+[![Deploy Status](https://github.com/nosql-cn/nosql-cn.org/actions/workflows/deploy.yml/badge.svg)](https://github.com/nosql-cn/nosql-cn.org/actions/workflows/deploy.yml)
+[![PR Preview](https://github.com/nosql-cn/nosql-cn.org/actions/workflows/preview.yml/badge.svg)](https://github.com/nosql-cn/nosql-cn.org/actions/workflows/preview.yml)
+
 本项目是基于 [Hugo](https://gohugo.io/) 构建的 NoSQL-CN 社区官网，旨在为存储技术爱好者提供一个纯粹的技术交流平台。
 
 ## 目录结构简介
@@ -149,7 +152,55 @@ hugo --environment production
 - **多语言支持？**
   配置见 `config/_default/languages.yaml`，内容见 `content/zh/`、`content/en/` 等。
 
+## 自动化 CI/CD
+
+### 🚀 自动部署
+
+本项目配置了 GitHub Actions 自动化部署：
+
+**触发条件**：
+- ✅ 推送到 `master` 分支（内容相关文件变更）
+- ✅ PR 合并到 `master` 分支
+- ✅ 手动触发工作流
+
+**部署流程**：
+1. **自动构建**：在云端使用 Hugo 构建静态网站
+2. **自动测试**：验证构建结果和关键页面
+3. **自动部署**：推送到 `gh-pages` 分支
+4. **自动生效**：GitHub Pages 自动发布
+
+**监控地址**：
+- 工作流状态：https://github.com/nosql-cn/nosql-cn.org/actions
+- 部署状态：https://github.com/nosql-cn/nosql-cn.org/deployments
+
+### 📋 PR 预览
+
+当用户提交 PR 时，会自动：
+
+1. **构建测试**：验证 PR 的构建是否成功
+2. **统计信息**：显示构建统计（页面数、文件数、大小）
+3. **PR 评论**：自动在 PR 中评论构建结果
+4. **产物下载**：提供构建产物供预览
+
+### 🛠️ 本地开发
+
+```bash
+# 克隆仓库
+git clone git@github.com:nosql-cn/nosql-cn.org.git
+cd nosql-cn.org
+
+# 安装依赖
+npm install
+
+# 本地开发
+hugo server --disableFastRender
+
+# 构建测试
+hugo --environment production
+```
+
 ## 参考文档
 
 - [Hugo 官方文档](https://gohugo.io/documentation/)
 - [dot-org-hugo-theme 主题文档](themes/dot-org-hugo-theme/README.md)
+- [GitHub Actions 文档](https://docs.github.com/en/actions)

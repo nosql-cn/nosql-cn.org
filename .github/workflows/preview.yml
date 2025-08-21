@@ -1,0 +1,97 @@
+name: PR Preview
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [opened, synchronize, reopened]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.148.2'
+        extended: true
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build Hugo site
+      run: hugo --environment production --minify
+      env:
+        HUGO_ENVIRONMENT: production
+
+    - name: Upload preview artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: preview-site
+        path: public/
+        retention-days: 7
+
+    - name: Add PR comment with build info
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { context } = require('@actions/github');
+          const { execSync } = require('child_process');
+          
+          const pageCount = parseInt(execSync('find public -name "*.html" | wc -l').toString());
+          const fileCount = parseInt(execSync('find public -type f | wc -l').toString());
+          const size = execSync('du -sh public | cut -f1').toString().trim();
+          
+          const changedFiles = context.payload.pull_request.changed_files;
+          const additions = context.payload.pull_request.additions;
+          const deletions = context.payload.pull_request.deletions;
+          
+          let fileChanges = '';
+          if (changedFiles > 0) {
+            fileChanges = `
+📁 **文件变更**:
+- 修改文件数: ${changedFiles}
+- 新增行数: ${additions}
+- 删除行数: ${deletions}`;
+          }
+          
+          const comment = `
+          🎯 **PR 构建预览**
+          
+          ✅ **构建成功** ${fileChanges}
+          
+          📊 **构建统计**:
+          - 页面数: ${pageCount}
+          - 文件数: ${fileCount}
+          - 总大小: ${size}
+          
+          🚀 **预览方式**:
+          1. 下载构建产物（Artifacts）
+          2. 在本地运行 \`hugo server\` 预览
+          
+          ⚡ **自动部署**:
+          - PR 合并到 master 分支后将自动部署到: https://nosql-cn.org
+          `;
+          
+          try {
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+          } catch (error) {
+            console.log('Comment already exists or failed to create:', error.message);
+          }
