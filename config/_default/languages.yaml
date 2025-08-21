@@ -14,10 +14,10 @@ zh:
     ### 号召性用语 ###
     main_cta:
       text: "加入我们"
-      link: "/example-page/"
+      link: "https://github.com/nosql-cn"
     footer_cta:
       text: "加入我们"
-      link: "/example-page/"
+      link: "https://github.com/nosql-cn"
     github_edit: "在 GitHub 上编辑此页面"
   ## 示例菜单显示子页面 ###
   menu:
