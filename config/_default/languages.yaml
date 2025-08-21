@@ -26,6 +26,10 @@ zh:
       name: "关于我们"
       url: "/about/"
       weight: 2
+    - identifier: "contribute"
+      name: "投稿指南"
+      url: "/contribute/"
+      weight: 3
     # - identifier: "child-1"
     #   name: "示例子页面"
     #   url: "/example-page/"
