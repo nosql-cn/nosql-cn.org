@@ -107,6 +107,12 @@ NoSQL-CN 社区欢迎所有存储领域的技术爱好者投稿分享。我们�
 
 ## 文章模板
 
+### 示例文章
+
+参考我们创建的示例文章：[Redis 性能优化：从慢查询到毫秒响应的实战指南](/blog/redis-performance-optimization/)
+
+### 基本格式
+
 ```markdown
 ---
 title: "文章标题"
